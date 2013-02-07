@@ -36,17 +36,24 @@ class larrymod extends rcube_plugin
                 $this->add_hook('preferences_save', array($this, 'prefs_save'));
             }
 
-            $this->headermini = $this->rc->config->get('larrymod_headermini', false);
-            $this->hidelabels = $this->rc->config->get('larrymod_hidelabels', false);
+            $this->headermini = ($this->rc->task != 'login') && ($this->rc->task != 'logout')
+                                && (empty($_REQUEST['_framed']) || (($this->rc->task == 'mail') && ($this->rc->action == 'get') && !empty($_REQUEST['_frame'])))
+                                ? $this->rc->config->get('larrymod_headermini', false) : false;
+
+            $this->hidelabels = (($this->rc->task == 'mail') || ($this->rc->task == 'addressbook')) && empty($_REQUEST['_framed'])
+                                ? $this->rc->config->get('larrymod_hidelabels', false) : false;
+
             $this->unselectable = $this->rc->config->get('larrymod_unselectable', false);
-            $this->superpreview = $this->rc->config->get('larrymod_superpreview', false);
+
+            $this->superpreview = ($this->rc->task == 'mail') && ($this->rc->action == '')
+                                ? $this->rc->config->get('larrymod_superpreview', false) : false;
 
             if ($this->unselectable) {
                 $this->include_script('unselectable.js');
                 $this->include_stylesheet($this->local_skin_path().'/unselectable.css');
             }
 
-            if ($this->superpreview && ($this->rc->task == 'mail') && ($this->rc->action == '')) {
+            if ($this->superpreview) {
                 $this->include_script('superpreview.js');
                 $this->include_stylesheet($this->local_skin_path().'/superpreview.css');
                 $this->add_hook('render_page', array($this, 'superpreview_add'));
