@@ -1,0 +1,30 @@
+#mailview-right div.mailexpand {
+        top: 72px !important;
+        z-index: 1000 !important;
+}
+
+#mailview-right div.mailcollapse {
+        height: 26px !important;
+}
+
+#mailview-right div.mailcollapse #mailpreviewtoggle,
+#mailview-right div.mailcollapse #countcontrols,
+#mailview-right div.mailcollapse #listselectors,
+#mailview-right div.mailcollapse #listcontrols,
+#mailview-right div.mailcollapse #messagelistcontainer {
+        display: none;
+}
+
+#mailview-right div.mailcollapse #messagelistfooter {
+        text-align: center;
+        border-top: 1px solid #DDDDDD;
+}
+
+#mailview-right div.mailcollapse #superpreview_countcontrols {
+    display: inline-block;
+}
+
+#superpreview_countcontrols {
+    display: none;
+    margin-top: 2px;
+}

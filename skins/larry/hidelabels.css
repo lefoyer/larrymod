@@ -1,0 +1,25 @@
+#messagesearchtools {
+        top: -3px;
+}
+
+#addressview-right #quicksearchbar {
+        top: -1px;
+}
+
+#addresslist,
+#contacts-box,
+#directorylistbox,
+#mailboxcontainer,
+#compose-contacts,
+#compose-content,
+#mailview-top {
+        top: 32px;
+}
+
+#messagetoolbar .toolbarselect {
+        bottom: 12px;
+}
+
+#mainscreen .offset {
+        margin-top: 32px;
+}

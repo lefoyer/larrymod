@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.9.0" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+	<name>larrytopmini</name>
+	<summary>Larry skin mod: minimize header, hide toolbar labels, unselectable interface element, expand/collase mailpreview frame.</summary>
+	<description>
+	    Larry skin mod: minimize header, hide toolbar labels, unselectable interface element, expand/collase mailpreview frame.
+	</description>
+	<lead>
+		<name>Sidlyarenko Sergey</name>
+		<user>lefoyer</user>
+		<email>roundcube@lefoyer.ru</email>
+		<active>yes</active>
+	</lead>
+	<uri>https://github.com/lefoyer/larrymod</uri>
+	<date>2013-02-07</date>
+	<version>
+		<release>0.1</release>
+		<api>0.1</api>
+	</version>
+	<stability>
+		<release>stable</release>
+		<api>stable</api>
+	</stability>
+	<license uri="http://www.gnu.org/licenses/gpl.html">GNU GPLv3+</license>
+	<notes>-</notes>
+	<contents>
+		<dir baseinstalldir="/" name="/">
+			<file name="config.inc.php.dist" role="cfg"/>
+			<file name="larrymod.php" role="php">
+				<tasks:replace from="@name@" to="name" type="package-info"/>
+				<tasks:replace from="@package_version@" to="version" type="package-info"/>
+			</file>
+			<file name="superpreview.js" role="data"></file>
+			<file name="unselectable.js" role="data"></file>
+			<file name="localization/en_US.inc" role="data"></file>
+			<file name="localization/ru_RU.inc" role="data"></file>
+			<file name="skins/larry/headermini.css" role="data"></file>
+			<file name="skins/larry/hidelabels.css" role="data"></file>
+			<file name="skins/larry/superpreview.css" role="data"></file>
+			<file name="skins/larry/unselectable.css" role="data"></file>
+			<file name="composer.json" role="data" />
+			<file name="CHANGELOG" role="doc" />
+			<file name="INSTALL" role="doc" />
+			<file name="LICENSE" role="doc" />
+			<file name="README.md" role="doc" />
+			</file>
+		</dir>
+		<!-- / -->
+	</contents>
+	<dependencies>
+		<required>
+			<php>
+				<min>5.2.1</min>
+			</php>
+		</required>
+	</dependencies>
+	<phprelease/>
+</package>

@@ -1,0 +1,64 @@
+[unselectable=on] {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+     user-select: none;
+}
+
+.boxtitle[unselectable=on],
+thead .section[unselectable=on],
+h1[unselectable=on],
+h2[unselectable=on],
+h3[unselectable=on],
+legend[unselectable=on] {
+    cursor: default;
+}
+
+a[unselectable=on],
+tbody .section[unselectable=on] {
+    cursor: pointer;
+}
+
+
+select,
+#messagelist tbody tr td.subject a,
+.records-table tbody td,
+.listbox .listitem a,
+.listbox .tablink a,
+.listing tbody td,
+.listing li a {
+    cursor: pointer;
+}
+
+#sourcename,
+div .label[unselectable=on],
+#filtermenu li a,
+#mailboxoptionsmenu li a {
+    cursor: default;
+}
+
+#filtermenu li a.active,
+#mailboxoptionsmenu li a.active {
+    cursor: pointer;
+}
+
+
+input[type=radio],
+input[type=checkbox],
+input[type=button] {
+    cursor: pointer;
+}
+
+
+
+[unselectable=off] {
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -webkit-user-select: text;
+    -o-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    cursor: text;
+}

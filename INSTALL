@@ -1,0 +1,29 @@
+Look at http://code.crapouillou.net/projects/roundcube-plugins
+
+Installing larry mod plugin
+---------------------------------------
+
+You need roundcube > 0.9 installed.
+
+1. Download the latest version it to the roundcube plugins dir :
+
+    mkdir <path_to_roundcube>/plugins/larrymod
+
+    cd <path_to_roundcube>/plugins/larrymod
+
+    git clone https://github.com/lefoyer/larrymod.git .
+
+2. Add "larrymod" to the plugins list in <path_to_roundcube>/config/main.inc.php, for example :
+
+    $rcmail_config['plugins'] = array('larrymod',);
+
+It works :)
+
+
+Configuration
+-------------
+
+You can customize some settings :
+
+    copy config.inc.php.dist to config.inc.php
+    edit config.inc.php as you fancy

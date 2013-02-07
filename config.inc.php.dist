@@ -1,0 +1,16 @@
+<?php
+
+// header minimize
+$rcmail_config['larrymod_headermini'] = false;
+
+// hide toolbar labels
+$rcmail_config['larrymod_hidelabels'] = false;
+
+// allow expand/collpse mail preview frame by click on messagelistfooter/statusbar
+$rcmail_config['larrymod_superpreview'] = false;
+
+// deny select interface elements
+$rcmail_config['larrymod_unselectable'] = false;
+
+
+?>

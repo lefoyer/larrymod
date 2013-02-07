@@ -1,0 +1,64 @@
+#topline {
+        height: 18px;
+        text-align: center;
+}
+
+#topline > .topright, #topline > .topleft {
+    display: inline-block;
+    padding: 0px 0 0 0;
+}
+
+.partwin #topline {
+    top: 0px;
+}
+
+.partwin #topline {
+    background: url("/skins/larry/images/linen_header.jpg") repeat scroll 0 0 #666666;
+    border-bottom: 1px solid #4F4F4F;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    color: #AAAAAA;
+    height: 18px;
+    padding: 2px 0 2px 10px;
+    text-align: center;
+}
+
+
+#topnav {
+        display: inline-block;
+        height: 18px;
+        margin-top: -2px;
+        margin-bottom: 0;
+        padding: 0 0 0 0;
+        background: transparent;
+}
+
+#toplogo {
+        display: inline-block;
+        margin-top: -3px;
+        margin-bottom: -7px;
+        padding: 0 5px 0 0;
+}
+
+/*** taskbar ***/
+
+#taskbar a {
+        height: 16px;
+        padding: 0 10px 0 6px;
+}
+
+#taskbar a.button-selected {
+        background-color: transparent;
+}
+
+#taskbar a span.button-inner {
+        height: 18px;
+}
+
+.partwin #mainscreen,
+#mainscreen,
+#mainscreen.offset {
+        top: 34px;
+}
