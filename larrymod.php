@@ -93,7 +93,7 @@ class larrymod extends rcube_plugin
                 $field_id = '_' . $key;
                 $input  = new html_checkbox(array('name' => $field_id, 'id' => $field_id, 'value' => 1));
 
-                $args['blocks']['main']['options'][$key] = array(
+                $args['blocks']['skin']['options'][$key] = array(
                     'title' => html::label($field_id, rcube::Q($this->gettext($type))),
                     'content' => $input->show($this->rc->config->get($key, false))
                 );
