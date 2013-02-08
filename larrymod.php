@@ -90,6 +90,10 @@ class larrymod extends rcube_plugin
         foreach (array('headermini', 'hidelabels', 'superpreview', 'unselectable') as $type) {
             $key = 'larrymod_' . $type;
             if (!in_array($key, $dont_override)) {
+
+                if (empty($args['blocks']['skin']['name']))
+                    $args['blocks']['skin'] = array('name' => rcube::Q($this->gettext('skin')),);
+
                 $field_id = '_' . $key;
                 $input  = new html_checkbox(array('name' => $field_id, 'id' => $field_id, 'value' => 1));
 
