@@ -62,3 +62,15 @@
 #mainscreen.offset {
         top: 34px;
 }
+
+#messagetoolbar.toolbar .spacer {
+        width: 75px;
+}
+
+#mailtoolbar.toolbar .spacer:nth-child(2) {
+        width: 185px;
+}
+
+#addressbooktoolbar.toolbar .spacer {
+        width: 60px;
+}
