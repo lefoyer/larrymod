@@ -1,7 +1,8 @@
 <?php
 
 // Simple html dom 1.5. Website: http://sourceforge.net/projects/simplehtmldom/
-require_once 'lib/simple_html_dom.php';
+if (!function_exists('file_get_html'))
+    require_once 'lib/simple_html_dom.php';
 
 /**
  * Larry MOD
@@ -150,7 +151,7 @@ class larrymod extends rcube_plugin
 
     function content_update($args)
     {
-        $html = str_get_html($args['content']);
+        $html = str_get_html($args['content'], true, true, DEFAULT_TARGET_CHARSET, false);
 
         if ($this->hidelabels)
             foreach ($html->find('#addressbooktoolbar > a.button, #messagetoolbar > a.button') as $a) $a->innertext = '';
