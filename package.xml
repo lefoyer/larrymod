@@ -41,6 +41,7 @@
 			<file name="skins/larry/hidelabels.css" role="data"/>
 			<file name="skins/larry/superpreview.css" role="data"/>
 			<file name="skins/larry/unselectable.css" role="data"/>
+			<file name="lib/simple_html_dom.php" role="php"/>
 			<file name="composer.json" role="data"/>
 			<file name="CHANGELOG" role="doc"/>
 			<file name="INSTALL" role="doc"/>
