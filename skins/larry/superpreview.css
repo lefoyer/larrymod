@@ -28,3 +28,12 @@
     display: none;
     margin-top: 2px;
 }
+
+#mailview-right.preview {
+    left: 0 !important;
+}
+
+#mailview-left.preview,
+#mailviewsplitterv.preview {
+    display: none;
+}

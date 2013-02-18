@@ -17,8 +17,8 @@
 	<uri>https://github.com/lefoyer/larrymod</uri>
 	<date>2013-02-07</date>
 	<version>
-		<release>0.1</release>
-		<api>0.1</api>
+		<release>0.2</release>
+		<api>0.2</api>
 	</version>
 	<stability>
 		<release>stable</release>

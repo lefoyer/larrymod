@@ -83,6 +83,7 @@ if (window.rcmail) {
         function previewtoggle() {
                     $('#mailview-bottom').toggleClass('mailexpand');
                     $('#mailview-top').toggleClass('mailcollapse');
+                    if (rcmail.env.superpreview_hidefolderslist) $('#mailview-left, #mailview-right, #mailviewsplitterv').toggleClass('preview');
                     rcmail.env.mailpreviewframe_status = !rcmail.env.mailpreviewframe_status;
         }
 

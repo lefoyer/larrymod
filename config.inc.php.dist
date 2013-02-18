@@ -9,8 +9,13 @@ $rcmail_config['larrymod_hidelabels'] = false;
 // allow expand/collpse mail preview frame by click on messagelistfooter/statusbar
 $rcmail_config['larrymod_superpreview'] = false;
 
+// hide folders list in expand preview mode
+$rcmail_config['larrymod_superpreview_hidefolderslist'] = false;
+
 // deny select interface elements
 $rcmail_config['larrymod_unselectable'] = false;
 
+// use config/main.inc.php array $rcmail_config['dont_override'] or this
+$rcmail_config['larrymod_dont_override'] = array('larrymod_superpreview_hidefolderslist');
 
 ?>

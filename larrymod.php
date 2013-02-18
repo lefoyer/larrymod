@@ -22,6 +22,7 @@ class larrymod extends rcube_plugin
     private $hidelabels = false;
     private $unselectable = false;
     private $superpreview = false;
+    private $superpreview_hidefolderslist = false;
 
     function init()
     {
@@ -49,6 +50,9 @@ class larrymod extends rcube_plugin
             $this->superpreview = ($this->rc->task == 'mail') && ($this->rc->action == '')
                                 ? $this->rc->config->get('larrymod_superpreview', false) : false;
 
+            $this->superpreview_hidefolderslist = ($this->rc->task == 'mail') && ($this->rc->action == '')
+                                ? $this->rc->config->get('larrymod_superpreview_hidefolderslist', false) : false;
+
             if ($this->unselectable) {
                 $this->include_script('unselectable.js');
                 $this->include_stylesheet($this->local_skin_path().'/unselectable.css');
@@ -59,7 +63,6 @@ class larrymod extends rcube_plugin
                 $this->include_stylesheet($this->local_skin_path().'/superpreview.css');
                 $this->add_hook('render_page', array($this, 'superpreview_add'));
             }
-
 
             if ($this->headermini) {
                 $this->include_stylesheet($this->local_skin_path().'/headermini.css');
@@ -86,9 +89,9 @@ class larrymod extends rcube_plugin
 
         $this->add_texts('localization/');
 
-        $dont_override = (array) $this->rc->config->get('dont_override', array());
+        $dont_override = array_merge((array) $this->rc->config->get('dont_override', array()) , (array) $this->rc->config->get('larrymod_dont_override', array()));
 
-        foreach (array('headermini', 'hidelabels', 'superpreview', 'unselectable') as $type) {
+        foreach (array('headermini', 'hidelabels', 'superpreview', 'superpreview_hidefolderslist', 'unselectable') as $type) {
             $key = 'larrymod_' . $type;
             if (!in_array($key, $dont_override)) {
 
@@ -116,9 +119,9 @@ class larrymod extends rcube_plugin
 
         $this->load_config();
 
-        $dont_override = (array) $this->rc->config->get('dont_override', array());
+        $dont_override = array_merge((array) $this->rc->config->get('dont_override', array()) , (array) $this->rc->config->get('larrymod_dont_override', array()));
 
-        foreach (array('headermini', 'hidelabels', 'superpreview', 'unselectable') as $type) {
+        foreach (array('headermini', 'hidelabels', 'superpreview', 'superpreview_hidefolderslist', 'unselectable') as $type) {
             $key = 'larrymod_' . $type;
             if (!in_array($key, $dont_override)) {
                 $args['prefs'][$key] = rcube_utils::get_input_value('_'.$key, rcube_utils::INPUT_POST) ? true : false;
@@ -131,6 +134,7 @@ class larrymod extends rcube_plugin
     function superpreview_add($p)
     {
         $this->rc->output->add_label('messagenrof');
+        $this->rc->output->set_env('superpreview_hidefolderslist', $this->superpreview_hidefolderslist);
 
         $this->rc->output->add_gui_object('superpreviewdisplay', 'superpreviewdisplay');
         $out = html::span(array('id' => 'superpreviewdisplay', 'class' => 'countdisplay'), '');
