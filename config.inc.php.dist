@@ -16,6 +16,8 @@ $rcmail_config['larrymod_superpreview_hidefolderslist'] = false;
 $rcmail_config['larrymod_unselectable'] = false;
 
 // use config/main.inc.php array $rcmail_config['dont_override'] or this
-$rcmail_config['larrymod_dont_override'] = array('larrymod_superpreview_hidefolderslist');
+$rcmail_config['larrymod_dont_override'] = array('larrymod_superpreview_hidefolderslist',
+                                                'larrymod_headermini', 'larrymod_hidelabels',
+                                                'larrymod_superpreview', 'larrymod_unselectable');
 
 ?>
