@@ -1,7 +1,7 @@
 larrymod
 ===================
 
-Roundcube v9.0 plugin Larry skin mod: minimize header, hide toolbar labels, unselectable interface element, expand/collase mailpreview frame.
+Roundcube v8.0 plugin Larry skin mod: minimize header, hide toolbar labels, unselectable interface element, expand/collase mailpreview frame.
 
 See demo video: http://www.youtube.com/watch?v=j6qL6ayiI7o&feature=youtu.be&hd=1
 and this video: http://www.youtube.com/watch?v=xCnGhTMTexo&feature=youtu.be&hd=1
