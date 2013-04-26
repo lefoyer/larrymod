@@ -85,6 +85,7 @@ if (window.rcmail) {
                     $('#mailview-top').toggleClass('mailcollapse');
                     if (rcmail.env.superpreview_hidefolderslist) $('#mailview-left, #mailview-right, #mailviewsplitterv').toggleClass('preview');
                     rcmail.env.mailpreviewframe_status = !rcmail.env.mailpreviewframe_status;
+                    if (rcmail.env.mailpreviewframe_status) $('iframe#messagecontframe').focus();
         }
 
         $('#messagelistfooter, #message').each( function () {

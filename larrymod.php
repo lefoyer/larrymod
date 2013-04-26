@@ -96,13 +96,13 @@ class larrymod extends rcube_plugin
             if (!in_array($key, $dont_override)) {
 
                 if (empty($args['blocks']['skin']['name']))
-                    $args['blocks']['skin'] = array('name' => rcube::Q($this->gettext('skin')),);
+                    $args['blocks']['skin'] = array('name' => Q($this->gettext('skin')),);
 
                 $field_id = '_' . $key;
                 $input  = new html_checkbox(array('name' => $field_id, 'id' => $field_id, 'value' => 1));
 
                 $args['blocks']['skin']['options'][$key] = array(
-                    'title' => html::label($field_id, rcube::Q($this->gettext($type))),
+                    'title' => html::label($field_id, Q($this->gettext($type))),
                     'content' => $input->show($this->rc->config->get($key, false))
                 );
             }
@@ -124,7 +124,7 @@ class larrymod extends rcube_plugin
         foreach (array('headermini', 'hidelabels', 'superpreview', 'superpreview_hidefolderslist', 'unselectable') as $type) {
             $key = 'larrymod_' . $type;
             if (!in_array($key, $dont_override)) {
-                $args['prefs'][$key] = rcube_utils::get_input_value('_'.$key, rcube_utils::INPUT_POST) ? true : false;
+                $args['prefs'][$key] = get_input_value('_'.$key, RCUBE_INPUT_POST) ? true : false;
             }
         }
 
@@ -140,10 +140,10 @@ class larrymod extends rcube_plugin
         $out = html::span(array('id' => 'superpreviewdisplay', 'class' => 'countdisplay'), '');
 
         $out .= html::a(array('onclick' => 'rcube_event.cancel(event); return rcmail.previousmessage();', 'id' => 'superpreviewbtn1', 'href' => '#',
-                 'title' => rcube::Q($this->gettext('previousmessage')), 'class' => 'button prevpage disabled'), html::span(array('class' => 'inner'), '&lt;'));
+                 'title' => Q($this->gettext('previousmessage')), 'class' => 'button prevpage disabled'), html::span(array('class' => 'inner'), '&lt;'));
 
         $out .= html::a(array('onclick' => 'rcube_event.cancel(event); return rcmail.nextmessage();', 'id' => 'superpreviewbtn2', 'href' => '#',
-                 'title' => rcube::Q($this->gettext('nextmessage')), 'class' => 'button nextpage disabled'), html::span(array('class' => 'inner'), '&gt;'));
+                 'title' => Q($this->gettext('nextmessage')), 'class' => 'button nextpage disabled'), html::span(array('class' => 'inner'), '&gt;'));
 
         $out = html::div(array('id' => 'superpreview_countcontrols', 'class' => 'pagenav dark'), $out);
 
