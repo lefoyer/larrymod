@@ -58,7 +58,7 @@
 }
 
 .minimal #topline a.button-logout {
-        display: inline_block;
+        display: inline-block;
 }
 
 .partwin #mainscreen,
