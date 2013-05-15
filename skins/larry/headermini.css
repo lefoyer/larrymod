@@ -57,10 +57,20 @@
         height: 18px;
 }
 
+.minimal #topline a.button-logout {
+        display: inline-block;
+}
+
 .partwin #mainscreen,
 #mainscreen,
 #mainscreen.offset {
         top: 34px;
+}
+
+.minimal .partwin #mainscreen,
+.minimal #mainscreen,
+.minimal #mainscreen.offset {
+        top: 16px;
 }
 /*
 #messagetoolbar.toolbar .spacer {
