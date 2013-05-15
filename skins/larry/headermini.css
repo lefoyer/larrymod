@@ -57,6 +57,10 @@
         height: 18px;
 }
 
+.minimal #topline a.button-logout {
+        display: inline_block;
+}
+
 .partwin #mainscreen,
 #mainscreen,
 #mainscreen.offset {
