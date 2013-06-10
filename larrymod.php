@@ -7,7 +7,7 @@ if (!function_exists('file_get_html'))
 /**
  * Larry MOD
  *
- * Larry skin mod: minimize header, hide toolbar labels, unselectable interface element, expand/collase mailpreview frame
+ * Larry skin mod: minimize header, hide toolbar labels, unselectable interface element, expand/collapse mailpreview frame
  *
  * @version @package_version@
  * @license GNU GPLv3+
