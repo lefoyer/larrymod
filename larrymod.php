@@ -7,7 +7,7 @@ if (!function_exists('file_get_html'))
 /**
  * Larry MOD
  *
- * Larry skin mod: minimize header, hide toolbar labels, unselectable interface element, expand/collapse mailpreview frame
+ * Larry skin mod: minimize header, hide toolbar labels, hide topbar labels, unselectable interface element, expand/collapse mailpreview frame
  *
  * @version @package_version@
  * @license GNU GPLv3+
@@ -44,6 +44,9 @@ class larrymod extends rcube_plugin
 
             $this->hidelabels = (($this->rc->task == 'mail') || ($this->rc->task == 'addressbook')) && empty($_REQUEST['_framed'])
                                 ? $this->rc->config->get('larrymod_hidelabels', false) : false;
+
+            $this->hidetoplabels = ($this->rc->task != 'login') && ($this->rc->task != 'logout') && empty($_REQUEST['_framed'])
+                                ? $this->rc->config->get('larrymod_hidetoplabels', false) : false;
 
             $this->unselectable = $this->rc->config->get('larrymod_unselectable', false);
 
@@ -91,7 +94,7 @@ class larrymod extends rcube_plugin
 
         $dont_override = array_merge((array) $this->rc->config->get('dont_override', array()) , (array) $this->rc->config->get('larrymod_dont_override', array()));
 
-        foreach (array('headermini', 'hidelabels', 'superpreview', 'superpreview_hidefolderslist', 'unselectable') as $type) {
+        foreach (array('headermini', 'hidelabels', 'hidetoplabels', 'superpreview', 'superpreview_hidefolderslist', 'unselectable') as $type) {
             $key = 'larrymod_' . $type;
             if (!in_array($key, $dont_override)) {
 
@@ -121,7 +124,7 @@ class larrymod extends rcube_plugin
 
         $dont_override = array_merge((array) $this->rc->config->get('dont_override', array()) , (array) $this->rc->config->get('larrymod_dont_override', array()));
 
-        foreach (array('headermini', 'hidelabels', 'superpreview', 'superpreview_hidefolderslist', 'unselectable') as $type) {
+        foreach (array('headermini', 'hidelabels', 'hidetoplabels', 'superpreview', 'superpreview_hidefolderslist', 'unselectable') as $type) {
             $key = 'larrymod_' . $type;
             if (!in_array($key, $dont_override)) {
                 $args['prefs'][$key] = rcube_utils::get_input_value('_'.$key, rcube_utils::INPUT_POST) ? true : false;
@@ -159,6 +162,10 @@ class larrymod extends rcube_plugin
 
         if ($this->hidelabels)
             foreach ($html->find('#addressbooktoolbar > a.button, #messagetoolbar > a.button') as $a) $a->innertext = '';
+
+        if ($this->hidetoplabels)
+            foreach ($html->find('#topnav > #taskbar > a > span.button-inner') as $span) $span->innertext = '';
+
 
 
         if ($this->headermini) {

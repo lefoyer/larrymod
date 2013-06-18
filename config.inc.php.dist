@@ -6,6 +6,9 @@ $rcmail_config['larrymod_headermini'] = false;
 // hide toolbar labels
 $rcmail_config['larrymod_hidelabels'] = false;
 
+// hide topbar labels
+$rcmail_config['larrymod_hidetoplabels'] = false;
+
 // allow expand/collapse mail preview frame by click on messagelistfooter/statusbar
 $rcmail_config['larrymod_superpreview'] = false;
 
@@ -17,7 +20,7 @@ $rcmail_config['larrymod_unselectable'] = false;
 
 // use config/main.inc.php array $rcmail_config['dont_override'] or this
 $rcmail_config['larrymod_dont_override'] = array('larrymod_superpreview_hidefolderslist',
-                                                'larrymod_headermini', 'larrymod_hidelabels',
+                                                'larrymod_headermini', 'larrymod_hidelabels', 'larrymod_hidetoplabels',
                                                 'larrymod_superpreview', 'larrymod_unselectable');
 
 ?>
