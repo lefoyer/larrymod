@@ -168,7 +168,8 @@ class larrymod extends rcube_plugin
             }
 
             $logout = $html->find('#topline > .topright > .button-logout', 0);
-            $logout->setAttribute('title', $logout->innertext);
+            if (isset($logout->innertext))
+                $logout->setAttribute('title', $logout->innertext);
             $logout->innertext = '&nbsp';
             $logout->style = 'text-decoration: none';
 
