@@ -160,9 +160,6 @@ class larrymod extends rcube_plugin
     {
         $html = str_get_html($args['content'], true, true, DEFAULT_TARGET_CHARSET, false);
 
-        if ($this->hidelabels)
-            foreach ($html->find('#addressbooktoolbar > a.button, #messagetoolbar > a.button') as $a) $a->innertext = '';
-
         if ($this->hidetoplabels)
             foreach ($html->find('#topnav > #taskbar > a > span.button-inner') as $span) {
                 $span->parentNode()->setAttribute('title', $span->innertext);
