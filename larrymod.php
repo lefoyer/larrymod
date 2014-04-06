@@ -160,12 +160,19 @@ class larrymod extends rcube_plugin
     {
         $html = str_get_html($args['content'], true, true, DEFAULT_TARGET_CHARSET, false);
 
-        if ($this->hidetoplabels)
+        if ($this->hidetoplabels) {
+
             foreach ($html->find('#topnav > #taskbar > a > span.button-inner') as $span) {
                 $span->parentNode()->setAttribute('title', $span->innertext);
                 $span->innertext = '';
             }
 
+            $logout = $html->find('#topline > .topright > .button-logout', 0);
+            $logout->setAttribute('title', $logout->innertext);
+            $logout->innertext = '&nbsp';
+            $logout->style = 'text-decoration: none';
+
+        }
 
         if ($this->headermini) {
 
