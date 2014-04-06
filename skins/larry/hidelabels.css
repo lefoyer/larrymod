@@ -23,3 +23,9 @@
 #mainscreen .offset {
         margin-top: 32px;
 }
+
+#addressbooktoolbar a.button,
+#messagetoolbar a.button {
+        color: transparent;
+        text-shadow: none;
+}
