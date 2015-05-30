@@ -24,8 +24,13 @@
         margin-top: 32px;
 }
 
+#mainscreencontent {
+        top: 0px;
+}
+
 #addressbooktoolbar a.button,
 #messagetoolbar a.button {
         color: transparent;
         text-shadow: none;
+        font-size: 0em;
 }
