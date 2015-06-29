@@ -2,18 +2,18 @@
     "name": "lefoyer/larrymod",
     "description": "The larry top mini plugin minimize header in Larry skin.",
     "license": "GPL-3.0+",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "type": "roundcube-plugin",
     "homepage": "https://github.com/lefoyer/larrymod",
     "authors": [
         {
             "name": "Sidlyarenko Sergey",
-            "email": "roundcube@lefoyer.ru",
+            "email": "roundcube@ilooi.com",
             "role": "Developer"
         }
     ],
     "support": {
-          "email": "roundcube@lefoyer.ru",
+          "email": "roundcube@ilooi.com",
           "issues": "https://github.com/lefoyer/larrymod/issues"
       }
 }

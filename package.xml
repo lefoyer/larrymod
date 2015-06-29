@@ -11,14 +11,14 @@
 	<lead>
 		<name>Sidlyarenko Sergey</name>
 		<user>lefoyer</user>
-		<email>roundcube@lefoyer.ru</email>
+		<email>roundcube@ilooi.com</email>
 		<active>yes</active>
 	</lead>
 	<uri>https://github.com/lefoyer/larrymod</uri>
-	<date>2013-02-07</date>
+	<date>2015-06-29</date>
 	<version>
-		<release>0.3</release>
-		<api>0.3</api>
+		<release>0.3.1</release>
+		<api>0.3.1</api>
 	</version>
 	<stability>
 		<release>stable</release>

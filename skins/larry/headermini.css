@@ -62,3 +62,7 @@
 #mainscreen.offset {
         top: 34px;
 }
+
+#taskbar a:focus {
+	background-color: transparent !important;
+}
