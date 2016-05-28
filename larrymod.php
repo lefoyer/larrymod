@@ -177,9 +177,9 @@ class larrymod extends rcube_plugin
 
         if ($this->headermini) {
 
-            if ($toplogo = $html->find('#toplogo', 0)) $toplogo->outertext = '';
+            if (($toplogo = $html->find('#toplogo', 0)) != null) $toplogo->outertext = '';
 
-            if (!$html->find('#header #topnav .button-logout', 0)) {
+            if ($html->find('#header #topnav .button-logout', 0) == null) {
                 $args['content'] = $html->innertext;
                 $html->clear();
                 unset($html);
