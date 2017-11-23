@@ -17,6 +17,10 @@
         top: 32px;
 }
 
+#messagetoolbar {
+        z-index: 10;
+}
+
 #messagetoolbar .toolbarselect {
         bottom: 12px;
 }
@@ -27,6 +31,7 @@
 
 #mainscreencontent {
         top: 0px;
+        z-index: 9;
 }
 
 #addressbooktoolbar a.button,
